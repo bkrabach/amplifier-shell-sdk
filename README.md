@@ -11,7 +11,7 @@ not happened yet. Host contracts remain with Unified.
 
 Run `npm test` from this repository to produce and qualify
 `dist/amplifier-shell-sdk-1.0.0.tgz`. The check installs that tarball outside the
-checkout and builds the example shipped inside it. Temporary dependencies are
+checkout, compiles a strict TypeScript consumer and builds the example shipped inside it. Temporary dependencies are
 removed automatically. Node.js 22 and npm are the contributor baseline.
 
 Install a qualified tarball in a component project:
@@ -52,6 +52,10 @@ See the [component contract](https://github.com/microsoft/amplifier-unified/blob
 [navigation and renderer contracts](https://github.com/microsoft/amplifier-unified/blob/main/docs/shell/README.md),
 and [standalone controls example](examples/shell-controls/README.md).
 Those host contracts remain canonical; the SDK does not duplicate their validator.
+
+The runtime stays browser JavaScript; declarations give authors compiler feedback.
+React comes from the host, while esbuild and TypeScript are authoring/check tools.
+Neither those tools nor a native runtime is required by an installed component.
 
 ## Release and distribution
 

@@ -23,13 +23,19 @@ try{
  assert.deepEqual(packed.files.map(row=>row.path).sort(),expected);
  const archive=join(scratch,packed.filename),consumer=join(scratch,'consumer');
  await mkdir(consumer);
- await copyFile(join(root,'examples/shell-controls/package.json'),join(consumer,'package.json'));
+ const example=JSON.parse(await readFile(join(root,'examples/shell-controls/package.json'),'utf8'));
+ await writeFile(join(consumer,'package.json'),JSON.stringify({...example,
+  devDependencies:{...example.devDependencies,typescript:pkg.devDependencies.typescript}}));
  run(['install',archive,'--save-exact','--no-audit','--no-fund'],consumer);
  const installed=join(consumer,'node_modules/@amplifier/shell-sdk');
  assert.deepEqual(await readFile(join(installed,'examples/shell-controls/package.json')),await readFile(join(root,'examples/shell-controls/package.json')));
  for(const name of ['index.js','index.d.ts'])assert.deepEqual(await readFile(join(installed,name)),await readFile(join(root,name)));
  for(const name of ['index.js','manifest.json','build.mjs','README.md'])
   await copyFile(join(installed,'examples/shell-controls',name),join(consumer,name));
+ await copyFile(join(root,'tests/consumer.ts'),join(consumer,'consumer.ts'));
+ execFileSync(process.execPath,[join(consumer,'node_modules/typescript/bin/tsc'),
+  '--strict','--noEmit','--target','ES2022','--module','NodeNext','--moduleResolution','NodeNext','consumer.ts'],
+  {cwd:consumer,stdio:'inherit'});
  run(['run','build'],consumer);
  const meta=JSON.parse(await readFile(join(consumer,'dist/build-inputs.json'),'utf8'));
  assert.deepEqual(Object.keys(meta.inputs).sort(),['index.js','node_modules/@amplifier/shell-sdk/index.js']);
@@ -39,7 +45,7 @@ try{
  const receipt={package:packed.name,version:packed.version,tarball:packed.filename,
   tarballSha256:await hash(archive),moduleSha256:await hash(join(consumer,'dist/module.mjs')),
   files:packed.files.map(({path,size})=>({path,size})),node:process.version,npm:run(['--version'],consumer).trim(),
-  platform:process.platform,inputs:Object.keys(meta.inputs),hostAcceptance:'Separate Unified DTU validation is required for changed interface or component behavior.'};
+  platform:process.platform,typescript:pkg.devDependencies.typescript,strictConsumer:'passed',inputs:Object.keys(meta.inputs),hostAcceptance:'Separate Unified DTU validation is required for changed interface or component behavior.'};
  await copyFile(archive,join(output,packed.filename));
  for(const name of ['module.mjs','manifest.json','build-inputs.json'])await copyFile(join(consumer,'dist',name),join(output,name));
  await writeFile(join(output,'qualification.json'),JSON.stringify(receipt,null,2)+'\n');
