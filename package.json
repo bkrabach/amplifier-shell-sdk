@@ -1,0 +1,28 @@
+{
+  "name": "@amplifier/shell-sdk",
+  "version": "1.0.0",
+  "description": "Dependency-free helpers and types for Amplifier Unified shell extensions",
+  "license": "MIT",
+  "type": "module",
+  "exports": "./index.js",
+  "types": "./index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md",
+    "LICENSE",
+    "ORIGIN.json",
+    "examples/shell-controls/index.js",
+    "examples/shell-controls/manifest.json",
+    "examples/shell-controls/README.md",
+    "examples/shell-controls/build.mjs",
+    "examples/shell-controls/package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/amplifier-shell-sdk.git"
+  },
+  "scripts": {
+    "test": "node scripts/qualify.mjs"
+  }
+}

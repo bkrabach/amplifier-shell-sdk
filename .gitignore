@@ -1,0 +1,4 @@
+node_modules/
+dist/
+*.tgz
+examples/shell-controls/package-lock.json
