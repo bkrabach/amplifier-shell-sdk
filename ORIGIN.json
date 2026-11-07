@@ -1,5 +1,5 @@
 {
-  "status": "Local extraction candidate; proposed repository is not created or published",
+  "status": "Initial import provenance; hashes identify original Unified inputs, not subsequent SDK revisions",
   "repository": "https://github.com/microsoft/amplifier-unified",
   "revision": "db63d8bd4fff4b7de28f5dc4f4b4641f42771d06",
   "history": "https://github.com/microsoft/amplifier-unified/commits/db63d8bd4fff4b7de28f5dc4f4b4641f42771d06/packages/shell-sdk",

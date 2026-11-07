@@ -5,14 +5,15 @@ for independently authored navigation, Canvas renderers and shell components.
 Package version `1.0.0` describes the existing host interface `apiVersion: "1.0"`.
 It does not version the application or declare compatibility with future APIs.
 
-This is an independent repository candidate extracted from Unified; see
-[the exact source and history](ORIGIN.json). Repository/registry publication has
-not happened yet. Host contracts remain with Unified.
+This repository owns the SDK and authoring example extracted from Unified; see
+[the exact source and history](ORIGIN.json). Host contracts remain with Unified.
+Initial distribution uses qualified GitHub release tarballs; npm registry
+publication is separate.
 
 Run `npm test` from this repository to produce and qualify
 `dist/amplifier-shell-sdk-1.0.0.tgz`. The check installs that tarball outside the
-checkout, compiles a strict TypeScript consumer and builds the example shipped inside it. Temporary dependencies are
-removed automatically. Node.js 22 and npm are the contributor baseline.
+checkout, compiles a strict TypeScript consumer and builds the example shipped
+inside it. Temporary dependencies are removed automatically. Node.js 22 and npm are the contributor baseline.
 
 Install a qualified tarball in a component project:
 

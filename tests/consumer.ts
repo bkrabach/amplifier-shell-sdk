@@ -7,6 +7,11 @@ export const factory = defineModule(({React}: {React: HostReact}) => function St
   return React.createElement('span', null, snapshot.slot);
 });
 
+// Preserve the original public form with an explicit return-type argument.
+const explicitFactory = defineModule<() => object>(() => () => ({}));
+const explicitComponent: () => object = explicitFactory({React: {}});
+explicitComponent();
+
 declare const host: ComponentHost;
 declare const React: HostReact;
 const component: ({host}: {host: ComponentHost}) => object = factory({React});
@@ -24,3 +29,6 @@ host.getSnapshot().selectedSessionId = 'other';
 defineModule(42);
 // @ts-expect-error The inferred factory retains its author's React requirement.
 factory({React: {}});
+
+// @ts-expect-error The host supplies React, not arbitrary required services.
+defineModule(({React, service}: {React: unknown; service: {name: string}}) => () => service.name);
