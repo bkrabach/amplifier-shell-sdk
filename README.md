@@ -92,6 +92,19 @@ CLA automation and support coverage are not established by copying these files.
 See [SECURITY.md](SECURITY.md), [SUPPORT.md](SUPPORT.md) and
 [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
+## Ecosystem map
+
+[SDK ecosystem page](https://microsoft.github.io/amplifier-constellation/projects/amplifier-shell-sdk/) · [Open the map](docs/ecosystem-map.svg) · [Map guide](https://github.com/microsoft/amplifier-constellation/blob/main/docs/ecosystem-maps.md)
+
+![The independent shell SDK provides browser extension helpers, types and an example used by Unified and its web client.](docs/ecosystem-map.svg)
+
+<details>
+<summary>See the wider ecosystem</summary>
+
+![Constellation roles and their relationships.](https://raw.githubusercontent.com/microsoft/amplifier-constellation/main/site/assets/art/building-blocks.png)
+
+</details>
+
 ## Contributing
 
 Most contributions require you to agree to a
