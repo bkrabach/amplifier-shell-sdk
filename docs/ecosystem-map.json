@@ -1,0 +1,109 @@
+{
+  "audience": "Authors of trusted browser shell components",
+  "citations": [
+    {
+      "git_blob": "6a8bbcf76ef11fda970c0bc0480e3c3b2d1565d8",
+      "path": "README.md",
+      "ref": "5114e5ecee18dfdc6af70876846adb0291fe2f1b",
+      "sha256": "bba979b2d9c060f53ccd5c2154baf4575e2e57f45067a6cae5203261bb7c5696",
+      "url": "https://github.com/bkrabach/amplifier-shell-sdk/blob/5114e5ecee18dfdc6af70876846adb0291fe2f1b/README.md"
+    },
+    {
+      "git_blob": "750e6b98ef77420bd228368be8a385ce9ae95a02",
+      "path": "package.json",
+      "ref": "5114e5ecee18dfdc6af70876846adb0291fe2f1b",
+      "sha256": "ab3f528d82e6322b6d91a5f82bb1ea11157a55a28ce2db022b614412dac01dd8",
+      "url": "https://github.com/bkrabach/amplifier-shell-sdk/blob/5114e5ecee18dfdc6af70876846adb0291fe2f1b/package.json"
+    },
+    {
+      "git_blob": "051658249fd2e7621dd36b07982dd52fe5e2cb87",
+      "path": "index.js",
+      "ref": "5114e5ecee18dfdc6af70876846adb0291fe2f1b",
+      "sha256": "1b358735db3b8de9802370cbe9c03911388b78ae36c20ed44fcba68fb915bbae",
+      "url": "https://github.com/bkrabach/amplifier-shell-sdk/blob/5114e5ecee18dfdc6af70876846adb0291fe2f1b/index.js"
+    }
+  ],
+  "display_name": "Amplifier Shell SDK",
+  "edges": [
+    {
+      "from": "self",
+      "relation": "contains",
+      "to": "helpers"
+    },
+    {
+      "from": "self",
+      "relation": "contains",
+      "to": "types"
+    },
+    {
+      "from": "self",
+      "relation": "contains",
+      "to": "example"
+    },
+    {
+      "from": "unified",
+      "relation": "uses",
+      "to": "self"
+    },
+    {
+      "from": "web",
+      "relation": "uses",
+      "to": "self"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "self",
+      "kind": "self",
+      "label": "Amplifier Shell SDK",
+      "repository": "bkrabach/amplifier-shell-sdk"
+    },
+    {
+      "id": "helpers",
+      "kind": "internal",
+      "label": "JavaScript helpers"
+    },
+    {
+      "id": "types",
+      "kind": "internal",
+      "label": "TypeScript declarations"
+    },
+    {
+      "id": "example",
+      "kind": "internal",
+      "label": "Controls example"
+    },
+    {
+      "id": "unified",
+      "kind": "external",
+      "label": "Unified host and assembly",
+      "repository": "microsoft/amplifier-unified"
+    },
+    {
+      "id": "web",
+      "kind": "external",
+      "label": "Web client inputs",
+      "repository": "microsoft/amplifier-client-web"
+    }
+  ],
+  "notes": [
+    "This is an independent open-source library hosted by bkrabach, not a Microsoft component in the Constellation family index. Its original extraction and repository history remain recorded in ORIGIN.json.",
+    "The package @amplifier/shell-sdk exposes browser component helpers for host API 1.0. It is not a terminal shell, agent runtime, network service or implementation of a complete Constellation role.",
+    "Component authors bundle the helper and accept React and state from the host. Unified retains manifest compatibility, capability discovery, validation, activation and authority; trusted same-origin extensions are not isolated by this library.",
+    "Public source ownership, a qualified release tarball, consumer input selection and app release are separate steps. This map does not change an installed default or establish host compatibility; npm registry publication is separate."
+  ],
+  "page_kind": "supporting library",
+  "purpose": "Author navigation, Canvas and shell extensions with an independent JavaScript helper library.",
+  "ref": "5114e5ecee18dfdc6af70876846adb0291fe2f1b",
+  "repository": "bkrabach/amplifier-shell-sdk",
+  "roles": [],
+  "start_cta": {
+    "label": "Read the SDK guide",
+    "url": "https://github.com/bkrabach/amplifier-shell-sdk/blob/5114e5ecee18dfdc6af70876846adb0291fe2f1b/README.md"
+  },
+  "summary": "Dependency-free JavaScript helpers, TypeScript declarations and a controls example for the documented shell host interface.",
+  "supports_roles": [
+    "Experience"
+  ],
+  "visibility": "public"
+}
