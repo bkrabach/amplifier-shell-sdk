@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/microsoft/amplifier-shell-sdk.git"
+    "url": "https://github.com/bkrabach/amplifier-shell-sdk.git"
   },
   "scripts": {
     "test": "node scripts/qualify.mjs"
